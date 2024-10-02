@@ -1,0 +1,1 @@
+# Site-Galeria-de-loja-Virtual
