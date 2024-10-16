@@ -10,16 +10,16 @@
 
 # Backlog do Produto
 
-  * Página "Perfil"
-  * Página "Formas de pagamento"
-  * Página "Carrinho de compras"
-  * Página "Produtos"
-  * Página "Detalhes do produto"
-  * Página "Login"
-  * Página "Cadastro"
-  * Página "Home"
-  * Página "Informações da empresa"
-  * Criar um logo
+  [x] Página "Perfil"
+  [x] Página "Formas de pagamento"
+  [x] Página "Carrinho de compras"
+  [x] Página "Produtos"
+  [x] Página "Detalhes do produto"
+  [x] Página "Login"
+  [x] Página "Cadastro"
+  [x] Página "Home"
+  [x] Página "Informações da empresa"
+  [x] Criar um logo
 
 # Tecnologias Utilizadas
 
