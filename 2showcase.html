@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif
+        }
+        
+        body {
+            font-size: 16px;
+        }
+        
+        .w3-half img {
+            margin-bottom: -6px;
+            margin-top: 16px;
+            opacity: 0.8;
+            cursor: pointer
+        }
+        
+        .w3-half img:hover {
+            opacity: 1
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <img src="../Pasta_GIT/Site-Galeria-de-loja-Virtual/Imagens/Logo_SF.png" alt="" width="250px" height="">
+        </div>
+        <div class="w3-bar-block">
+            <a href="1home.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="2showcase.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Vitrine</a>
+            <a href="3services.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Serviços</a>
+            <a href="4designers.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a>
+            <a href="6aboutUs.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sobre Nós</a>
+            <a href="7contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Menu superior em telas pequenas -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Company Name</span>
+    </header>
+
+    <!-- Efeito de sobreposição ao abrir a barra lateral em telas pequenas -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !Conteudo da Pagina! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Cabeçalho -->
+        <div class="w3-container" style="margin-top:80px" id="showcase">
+            <h1 class="w3-jumbo"><b>Design de Interiores</b></h1>
+        </div>
+
+        <!-- Grade de Fotos (modal) -->
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <img src="" style="width:40%" onclick="onClick(this)" alt="">
+                <img src="" style="width:50%" onclick="onClick(this)" alt="">
+                <img src="" style="width:50%" onclick="onClick(this)" alt="">
+            </div>
+
+            <div class="w3-half">
+                <img src="" style="width:60%" onclick="onClick(this)" alt="">
+                <img src="" style="width:50%" onclick="onClick(this)" alt="">
+                <img src="" style="width:30%" onclick="onClick(this)" alt="">
+            </div>
+        </div>
+
+        <!-- Modal para imagens em tamanho real com um clique -->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Conteúdo da página final -->
+    </div>
+
+    <!-- Contêiner W3.CSS -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+        <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p>
+    </div>
+
+    <script>
+        // Script para abrir e fechar a barra lateral
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+</body>
+
+</html>
