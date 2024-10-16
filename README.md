@@ -27,6 +27,3 @@
 * CSS
 * Trello
 * Git e GitHub
-
-*ola*
-[x]fala ai rapaziada
