@@ -9,17 +9,16 @@
   Os produtos vendidos no site serão providenciados por outras empresas ou vendedores individuais.
 
 # Backlog do Produto
-
-  [x] Página "Perfil"
-  [x] Página "Formas de pagamento"
-  [x] Página "Carrinho de compras"
-  [x] Página "Produtos"
-  [x] Página "Detalhes do produto"
-  [x] Página "Login"
-  [x] Página "Cadastro"
-  [x] Página "Home"
-  [x] Página "Informações da empresa"
-  [x] Criar um logo
+- [x] Página "Perfil"
+- [x] Página "Formas de pagamento"
+- [x] Página "Carrinho de compras"
+- [x] Página "Produtos"
+- [X] Página "Detalhes do produto"
+- [X] Página "Login"
+- [x] Página "Cadastro"
+- [x] Página "Home"
+- [x] Página "Informações da empresa"
+- [x] Criar um logo
 
 # Tecnologias Utilizadas
 
