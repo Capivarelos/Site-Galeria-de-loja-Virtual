@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;}
+
+body{
+    background-color: #e52b1f;
+    height: 100vh;
+    overflow: hidden;}
+
+.partelogin{
+    background: linear-gradient(90deg, #e52b1f, #53a16a, #fc8b13);
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    width: 43%;}
+
+.partelogin > img{
+    width: 80%;
+    padding-bottom: 50px;}
+
+form{
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 20px;
+    align-items: center;}
+
+label{
+    margin-bottom: 5px;}
+
+input{
+    margin-bottom: 8px;}
+
+.fzrLogin{
+    display: flex;}
+
+.fzrLogin > p{
+    margin-right: 7px;}
+
+.foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 57%;}
+    
+.foto > img{
+    width: 70%;
+    height: 70%;
+    padding-bottom: 50px;}
