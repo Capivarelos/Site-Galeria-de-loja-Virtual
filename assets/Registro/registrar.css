@@ -2,6 +2,12 @@
     margin: 0px;
     padding: 0px;}
 
+@font-face {
+    font-family: 'PkChicken';
+    src: url(../fonts/PinkChicken-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
 main{
     display: flex;
     justify-content: space-between;
@@ -10,7 +16,8 @@ main{
 body{
     background-color: #e52b1f;
     height: 100vh;
-    overflow: hidden;}
+    overflow: hidden;
+    font-family: 'PkChicken';}
 
 .partelogin{
     background: linear-gradient(90deg, #e52b1f, #53a16a, #fc8b13);
