@@ -56,5 +56,17 @@
     font-style: normal;}
 
 body{
-    font-family: 'PkChicken';
+    font-family: 'PkChicken';}
+
+.detalhes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+
+.info_geral{
+
+}
+
+.details{
+
 }
