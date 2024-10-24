@@ -40,10 +40,26 @@ html {
 
 .column {
     float: left;
-    width: 33.3%;
+    width: 32.5%;
     margin-bottom: 16px;
     padding: 0 8px;
 }
+
+.cj {
+    float: left;
+    width: 32.5%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+
+}
+
+.cm {
+    float: right;
+    width: 32.5%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
 
 .card {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
@@ -84,6 +100,14 @@ html {
     width: 100%;
 }
 
+.ff {
+    box-shadow: 1 5px;
+    text-align: center;
+
+
+
+}
+
 .button:hover {
     background-color: #555;
 }
@@ -94,3 +118,11 @@ html {
         display: block;
     }
 }
+
+
+
+
+
+
+
+
