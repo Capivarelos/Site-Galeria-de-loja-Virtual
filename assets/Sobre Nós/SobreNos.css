@@ -119,10 +119,29 @@ html {
     }
 }
 
+.equipe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;}
 
+.membro-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;}
 
+.foto{
+    display: flex;
+    justify-content: center;}
 
+.foto > img{
+    width: 70%;}
 
+.membro-card > p{
+    width: 70%;
+    margin: 0;}
 
-
-
+.membro-card > button{
+    background-color: white;
+    border: 0;
+    width: 70%;}
