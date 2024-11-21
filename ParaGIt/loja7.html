@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="background-color:white">
+
+
+	<head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Pagamento com Cartão</title>
+                <!-- Incluindo o W3.CSS para estilos rápidos -->
+	<title>Formas de pagamento</title>
+        <link rel="shortcut icon" href="loja/logo.png">
+        <link rel="stylesheet" href="loja7.css">
+        <link rel="stylesheet" href="loja/1home.html">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	</head>
+	<body>
+
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* Estilos personalizados para a sidebar */
+        .w3-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #d32f2f;
+            z-index: 3;
+        }
+
+        /* Estilos para o conteúdo principal */
+        .container {
+            margin-left: 320px; /* Ajusta o conteúdo para não ficar atrás da sidebar */
+            padding: 20px;
+        }
+
+        .payment-form {
+            max-width: 500px;
+            margin: auto;
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button button {
+            width: 100%;
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .submit-button button:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .w3-sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-padding" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
+        <div class="w3-container">
+            <img src="loja/logo.png" alt="Logo" style="width:100%; height:auto;">
+        </div>
+        <div class="w3-bar-block">
+            <h1>FORMA DE PAGAMENTOS</h1>
+            <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Cartão</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <div class="payment-form">
+            <h1>Pagamento com Cartão</h1>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9876 5432" required>
+                </div>
+                <div class="input-group">
+                    <label for="card-holder">Nome do Titular</label>
+                    <input type="text" id="card-holder" placeholder="Nome do Titular" required>
+                </div>
+                <div class="input-group">
+                    <label for="expiration-date">Data de Validade</label>
+                    <input type="text" id="expiration-date" placeholder="MM/AA" required>
+                </div>
+                <div class="input-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" placeholder="123" required>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">Pagar Agora</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script para fechar a sidebar no modo mobile -->
+    <script>
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+
+</body>
+</html>
+
+

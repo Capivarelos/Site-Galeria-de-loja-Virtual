@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento com Pix</title>
+    <link rel="shortcut icon" href="loja/logo.png">
+    <!-- Linkando o CSS -->
+    <link rel="stylesheet" href="loja4.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
+        <div class="w3-container">
+            <img src="loja/logo.png" alt="" width="250px" height="200px">
+        </div>
+        <div class="w3-bar-block">
+            <h1>FORMA DE PAGAMENTOS</h1>
+            <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pix</a>
+            
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <div class="payment-form">
+            <h1>Pagamento com Pix</h1>
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Nome do Titular</label>
+                    <input type="text" id="name" name="name" placeholder="Nome Completo" required>
+                </div>
+                <div>
+                    <label for="cpf-cnpj">CPF/CNPJ</label>
+                    <input type="text" id="cpf-cnpj" name="cpf-cnpj" placeholder="000.000.000-00 / 00.000.000/0000-00" required>
+                </div>
+                <div>
+                    <label for="value">Valor do Pix</label>
+                    <input type="text" id="value" name="value" placeholder="R$ 0,00" required>
+                </div>
+                <div>
+                    <label for="qr-code">QR Code do Pix</label><br>
+                    <!-- Exemplo de QR Code (adicione o seu código aqui) -->
+                    <img src="loja/Rickrolling_QR_code.png" alt="QR Code Pix" width="250px">
+                </div>
+                <div>
+                    <button type="submit">Confirmar Pagamento</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

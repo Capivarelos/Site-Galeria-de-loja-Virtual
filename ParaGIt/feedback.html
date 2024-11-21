@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Feedback</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <!-- Logo na parte superior -->
+    <header>
+        <img src="/loja/logo.png" alt="Logo do Site" class="logo">
+    </header>
+    
+    <div class="feedback-container">
+        <h1>Feedback</h1>
+        <form id="feedback-form">
+            <div class="question">
+                <label for="satisfacao">Como você avalia sua experiência no site?</label>
+                <select id="satisfacao" name="satisfacao" required>
+                    <option value="excelente">Excelente</option>
+                    <option value="bom">Bom</option>
+                    <option value="regular">Regular</option>
+                    <option value="ruim">Ruim</option>
+                </select>
+            </div>
+            
+            <div class="question">
+                <label for="facilidade">Como você avalia a facilidade de navegação?</label>
+                <select id="facilidade" name="facilidade" required>
+                    <option value="excelente">Excelente</option>
+                    <option value="bom">Bom</option>
+                    <option value="regular">Regular</option>
+                    <option value="ruim">Ruim</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="sugestoes">Tem alguma sugestão para melhorar o site?</label>
+                <textarea id="sugestoes" name="sugestoes" rows="4"></textarea>
+            </div>
+
+            <div class="question">
+                <label for="comentarios">Deixe um comentário adicional:</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Enviar Feedback</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
