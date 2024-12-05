@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="background-color:white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de pagamento</title>
+    <link rel="shortcut icon" href="loja/logo.png">
+    <link rel="stylesheet" href="loja6.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+        }
+
+        /* Estilo do sistema de saldo */
+        .saldo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .saldo-header {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .saldo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo da lista de transações */
+        .transacao {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .transacao th, .transacao td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .transacao th {
+            background-color: #f2f2f2;
+        }
+
+        .transacao td.deposito {
+            color: green;
+        }
+
+        .transacao td.saque {
+            color: red;
+        }
+
+        /* Sidebar customizada */
+        .w3-sidebar {
+            z-index: 3;
+            width: 300px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Variáveis para saldo e histórico de transações
+        let saldo = 1000;
+        let historico = [];
+
+        // Função para atualizar o saldo exibido na página
+        function atualizarSaldo() {
+            document.getElementById("saldo").textContent = "R$ " + saldo.toFixed(2);
+            document.getElementById("historico").innerHTML = "";
+            for (let transacao of historico) {
+                let row = document.createElement("tr");
+                let cell1 = document.createElement("td");
+                let cell2 = document.createElement("td");
+                let cell3 = document.createElement("td");
+                cell1.textContent = transacao.data;
+                cell2.textContent = transacao.tipo;
+                cell3.textContent = "R$ " + transacao.valor.toFixed(2);
+                cell2.classList.add(transacao.tipo === 'Depósito' ? 'deposito' : 'saque');
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                row.appendChild(cell3);
+                document.getElementById("historico").appendChild(row);
+            }
+        }
+
+        // Função para realizar um depósito
+        function depositar() {
+            const valor = parseFloat(prompt("Digite o valor a depositar:"));
+            if (!isNaN(valor) && valor > 0) {
+                saldo += valor;
+                historico.push({
+                    data: new Date().toLocaleString(),
+                    tipo: "Depósito",
+                    valor: valor
+                });
+                atualizarSaldo();
+                alert("Depósito de R$ " + valor.toFixed(2) + " realizado com sucesso!");
+            } else {
+                alert("Valor inválido! Tente novamente.");
+            }
+        }
+
+        // Função para realizar um saque
+        function sacar() {
+            const valor = parseFloat(prompt("Digite o valor a sacar:"));
+            if (!isNaN(valor) && valor > 0) {
+                if (valor <= saldo) {
+                    saldo -= valor;
+                    historico.push({
+                        data: new Date().toLocaleString(),
+                        tipo: "Saque",
+                        valor: valor
+                    });
+                    atualizarSaldo();
+                    alert("Saque de R$ " + valor.toFixed(2) + " realizado com sucesso!");
+                } else {
+                    alert("Saldo insuficiente!");
+                }
+            } else {
+                alert("Valor inválido! Tente novamente.");
+            }
+        }
+
+        // Função para inicializar o sistema de saldo ao carregar a página
+        window.onload = atualizarSaldo;
+    </script>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
+        <div class="w3-container">
+            <img src="loja/logo.png" alt="Logo" width="250px" height="200px">
+        </div>
+        <div class="w3-bar-block">
+            <h1>FORMA DE PAGAMENTOS</h1>
+            <a href="javascript:void(0)" onclick="depositar()" class="w3-bar-item w3-button w3-hover-white">Depositar</a>
+            <a href="javascript:void(0)" onclick="sacar()" class="w3-bar-item w3-button w3-hover-white">Sacar</a>
+            <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Voltar</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal centralizado -->
+    <div class="saldo-container">
+        <div class="saldo-header">Sistema de Saldo Bancário</div>
+        <div class="saldo" id="saldo">R$ 1000.00</div>
+        <button onclick="depositar()" class="button">Depositar</button>
+        <button onclick="sacar()" class="button">Sacar</button>
+
+        <!-- Histórico de transações -->
+        <h3>Histórico de Transações</h3>
+        <table class="transacao">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="historico"></tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

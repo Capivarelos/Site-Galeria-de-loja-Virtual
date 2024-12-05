@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Pagamento</title>
+    <link rel="shortcut icon" href="loja/logo.png">
+    <link rel="stylesheet" href="loja3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
+        <div class="w3-container">
+            <img src="loja/logo.png" alt="" width="250px" height="200px">
+        </div>
+        <div class="w3-bar-block">
+            <h1>FORMA DE PAGAMENTOS</h1>
+            <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Voltar</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da Página -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+        <div class="parte4">
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <label for="name">Nome completo:</label>
+                <input type="text" id="name" name="name" value=""><br><br>
+
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" value=""><br><br>
+
+                <h3>Taxa de entrega:</h3>
+                <h3>Escolha a forma de entrega:</h3>
+                <input type="radio" id="free_delivery" name="delivery_type" value="FreeDelivery">
+                <label for="free_delivery">Entrega grátis (para pedidos acima de R$ 150,00)</label><br>
+
+                <input type="radio" id="standard_delivery" name="delivery_type" value="StandardDelivery">
+                <label for="standard_delivery">Entrega padrão - R$ 10,00</label><br>
+
+                <h3>Cupom</h3>
+                <label for="discount_code">Adicione seu código:</label><br>
+                <input type="text" id="discount_code" name="discount_code" placeholder="Digite o código de desconto" style="width: 300px;"><br><br>
+
+                <h3>Detalhes do local de entrega:</h3>
+                <textarea name="form" rows="5" cols="120"></textarea><br><br>
+
+                <input type="submit" value="Cancelar"><br>
+                <button type="button" onclick="alert('Informações registradas com sucesso.')">Enviar</button>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
+

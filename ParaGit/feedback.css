@@ -1,0 +1,334 @@
+/* Estilo Geral */
+body {
+    background: linear-gradient(90deg, orange, blue, black);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Cabeçalho com a logo */
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Container de Feedback */
+.feedback-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.feedback-container h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para as perguntas */
+.feedback-container .question {
+    margin-bottom: 20px;
+}
+
+.feedback-container label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feedback-container select, .feedback-container textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.feedback-container select:focus, .feedback-container textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Ajustes para manter as opções dentro do formulário */
+.feedback-container select {
+    width: 100%;
+}
+
+/* Botão Enviar Feedback */
+.feedback-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-container button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feedback-container {
+        padding: 15px;
+    }
+
+    .feedback-container h1 {
+        font-size: 24px;
+    }
+
+    .feedback-container select, .feedback-container textarea {
+        font-size: 14px;
+    }
+}
+
+.feedback-container {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+}
+
+.feedback-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.feedback-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 1s;
+}
+
+.feedback-container form {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.feedback-container select,
+.feedback-container textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 2px solid #ddd;
+}
+
+.feedback-container select:focus,
+.feedback-container textarea:focus {
+    border-color: #3498db;
+}
+
+.feedback-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-container button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.back-to-site {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .feedback-container {
+        width: 90%;
+    }
+
+    .feedback-container h1 {
+        font-size: 28px;
+    }
+
+    .feedback-container button {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+
+
+/* Estilo do Emoji Joinha */
+.joinha {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 70px; /* Aumentado para dar mais destaque */
+    cursor: pointer;
+    color: #f39c12;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+    user-select: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Brilho constante */
+@keyframes shineAnimation {
+    0% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Animação de brilho */
+.shine {
+    animation: shineAnimation 1.5s infinite;
+}
+
+/* Efeito de partículas (bolinhas coloridas) */
+@keyframes particlesEffect {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particlesEffect 0.8s forwards;
+}
+
+.particle:nth-child(even) {
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+}
+
+.particle:nth-child(odd) {
+    animation-duration: 1.2s;
+    animation-delay: 0.6s;
+}
+
+/* Animação de pulso */
+.joinha:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Adiciona um efeito de "coração" ao clicar */
+@keyframes heartParticles {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+.heart-particle {
+    position: absolute;
+    font-size: 24px;
+    color: #ff4081;
+    animation: heartParticles 1s forwards;
+    pointer-events: none;
+    animation-delay: 0.2s;
+}
+
+/* Efeito de "brilho" no joinha ao clicar */
+@keyframes shineClick {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Melhorando a interação com o joinha */
+.joinha:active {
+    animation: shineClick 0.5s forwards;
+}
