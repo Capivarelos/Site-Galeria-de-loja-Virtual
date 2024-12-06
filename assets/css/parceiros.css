@@ -1,24 +1,28 @@
-h1{
+h1 {
     margin: 0;
-    padding: 0;}
+    padding: 0;
+}
 
 @font-face {
     font-family: 'PkChicken';
     src: url(../fonts/PinkChicken-Regular.ttf) format('truetype');
     font-weight: normal;
-    font-style: normal;}
+    font-style: normal;
+}
 
-body{
-    font-family: 'PkChicken';}
+body {
+    font-family: 'PkChicken';
+}
 
-main{
+main {
     margin-left: 10%;
-    margin-right: 10%;}
+    margin-right: 10%;
+}
 
-.banner{
+.banner {
     margin-left: 15%;
     margin-right: 15%;
-    background: url("img/parceiros.jpg") no-repeat;
+    background: url("../images/parceiros.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -28,9 +32,10 @@ main{
     color: white;
     margin-bottom: 100px;
     flex-direction: column;
-    padding-top: 100px;}
+    padding-top: 100px;
+}
 
-.parceiros{
+.parceiros {
     border: 1px solid black;
     box-shadow: 10px 10px aqua;
     display: flex;
@@ -38,51 +43,60 @@ main{
     padding-right: 40px;
     padding-left: 20px;
     margin-right: 10px;
-    margin-bottom: 70px;}
+    margin-bottom: 70px;
+}
 
-.parceiros > h1{
+.parceiros>h1 {
     text-align: center;
     width: 100%;
     border-bottom: 1px solid black;
-    padding-bottom: 20px;}
+    padding-bottom: 20px;
+}
 
-.btnvoltar{
+.btnvoltar {
     color: white;
     color: currentColor;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: 100px;
-    margin-top: 50px;}
+    margin-top: 50px;
+}
 
-.btnvoltar > img{
+.btnvoltar>img {
     width: 5%;
-    margin-right: 20px;}
+    margin-right: 20px;
+}
 
-.conteudo{
+.conteudo {
     padding-bottom: 30px;
-    display: flex;}
+    display: flex;
+}
 
-.conteudo > img{
+.conteudo>img {
     width: 40%;
-    margin-right: 30px;}
+    margin-right: 30px;
+}
 
-.info{
+.info {
     font-size: 20px;
     width: 100%;
     border-left: 1px solid black;
     padding-left: 15px;
     padding-top: 20px;
-    padding-bottom: 20px;}
+    padding-bottom: 20px;
+}
 
-.info > div{
-    margin-bottom: 15px;}
+.info>div {
+    margin-bottom: 15px;
+}
 
-a > img{
+a>img {
     height: 100%;
-    width: 100%;}
+    width: 350px;
+}
 
-.produtos{
+.produtos {
     border: 1px solid black;
     width: 115px;
     height: 300px;
@@ -91,4 +105,5 @@ a > img{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
-    padding-right: 30px;}
+    padding-right: 30px;
+}

@@ -1,201 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="loja/logo.png">
     <title>Página de Feedback</title>
-    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="../css/feedback.css">
 </head>
+
 <body>
 
     <!-- Logo na parte superior -->
     <header>
-        <img src="./loja/logo.png" alt="Logo do Site" class="logo">
+        <img src="../images/logo.png" alt="Logo do Site" class="logo">
     </header>
     <div class="feedback-container">
         <h1>Obrigado pelo seu Feedback!</h1>
         <p>Queremos sempre melhorar, suas opiniões são importantes para nós.</p>
 
-    <div class="feedback-container">
-        <h1>Feedback</h1>
-        <form id="feedback-form">
-            <!-- Pergunta 1 -->
-            <div class="question">
-                <label for="satisfacao">Como você avalia sua experiência no site?</label>
-                <select id="satisfacao" name="satisfacao" required>
+        <div class="feedback-container">
+            <h1>Feedback</h1>
+            <form id="feedback-form">
+                <!-- Pergunta 1 -->
+                <div class="question">
+                    <label for="satisfacao">Como você avalia sua experiência no site?</label>
+                    <select id="satisfacao" name="satisfacao" required>
                     <option value="excelente">Excelente</option>
                     <option value="bom">Bom</option>
                     <option value="regular">Regular</option>
                     <option value="ruim">Ruim</option>
                     <option value="ruim">Péssimo</option>
                 </select>
-            </div>
+                </div>
 
-            <!-- Pergunta 2 -->
-            <div class="question">
-                <label for="facilidade">Como você avalia a facilidade de navegação?</label>
-                <select id="facilidade" name="facilidade" required>
+                <!-- Pergunta 2 -->
+                <div class="question">
+                    <label for="facilidade">Como você avalia a facilidade de navegação?</label>
+                    <select id="facilidade" name="facilidade" required>
                     <option value="excelente">Excelente</option>
                     <option value="bom">Bom</option>
                     <option value="regular">Regular</option>
                     <option value="ruim">Ruim</option>
                     <option value="ruim">Péssimo</option>
                 </select>
-            </div>
+                </div>
 
-            <!-- Pergunta 3 -->
-            <div class="question">
-                <label for="design">Como você avalia o design do site?</label>
-                <select id="design" name="design" required>
+                <!-- Pergunta 3 -->
+                <div class="question">
+                    <label for="design">Como você avalia o design do site?</label>
+                    <select id="design" name="design" required>
                     <option value="excelente">Excelente</option>
                     <option value="bom">Bom</option>
                     <option value="regular">Regular</option>
                     <option value="ruim">Ruim</option>
                     <option value="ruim">Péssimo</option>
                 </select>
-            </div>
+                </div>
 
-            <!-- Pergunta 4 -->
-            <div class="question">
-                <label for="carregamento">Como você avalia o tempo de carregamento das páginas?</label>
-                <select id="carregamento" name="carregamento" required>
+                <!-- Pergunta 4 -->
+                <div class="question">
+                    <label for="carregamento">Como você avalia o tempo de carregamento das páginas?</label>
+                    <select id="carregamento" name="carregamento" required>
                     <option value="excelente">Excelente</option>
                     <option value="bom">Bom</option>
                     <option value="regular">Regular</option>
                     <option value="ruim">Ruim</option>
                     <option value="ruim">Péssimo</option>
                 </select>
-            </div>
+                </div>
 
-            <!-- Pergunta 5 -->
-            <div class="question">
-                <label for="funcionalidade">O site possui todas as funcionalidades que você esperava?</label>
-                <select id="funcionalidade" name="funcionalidade" required>
+                <!-- Pergunta 5 -->
+                <div class="question">
+                    <label for="funcionalidade">O site possui todas as funcionalidades que você esperava?</label>
+                    <select id="funcionalidade" name="funcionalidade" required>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                     <option value="parcial">Parcialmente</option>
                 </select>
-            </div>
+                </div>
 
-            <!-- Pergunta 6 -->
-            <div class="question">
-                <label for="sugestoes">Tem alguma sugestão para melhorar o site?</label>
-                <textarea id="sugestoes" name="sugestoes" rows="4"></textarea>
-            </div>
+                <!-- Pergunta 6 -->
+                <div class="question">
+                    <label for="sugestoes">Tem alguma sugestão para melhorar o site?</label>
+                    <textarea id="sugestoes" name="sugestoes" rows="4"></textarea>
+                </div>
 
-            <!-- Pergunta 7 -->
-            <div class="question">
-                <label for="comentarios">Deixe um comentário adicional:</label>
-                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
-            </div>
+                <!-- Pergunta 7 -->
+                <div class="question">
+                    <label for="comentarios">Deixe um comentário adicional:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                </div>
 
-            <!-- Enviar Feedback -->
-            <button type="submit">Enviar Feedback</button>
-        </form>
+                <!-- Enviar Feedback -->
+                <button type="submit">Enviar Feedback</button>
+            </form>
+        </div>
+
+
+
+        <!-- Botão de voltar ao site principal -->
+        <div class="back-to-site">
+            <a href="loja ancora2.html" class="btn">Voltar ao Site</a>
+        </div>
     </div>
 
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio do formulário
 
+            // Obtendo os valores dos inputs
+            var opinion = document.getElementById("opinion").value;
+            var suggestions = document.getElementById("suggestions").value;
 
-      <!-- Botão de voltar ao site principal -->
-      <div class="back-to-site">
-        <a href="./loja ancora2.html" class="btn">Voltar ao Site</a>
-    </div>
-</div>
+            // Criação de um objeto para salvar os dados
+            var feedback = {
+                opinion: opinion,
+                suggestions: suggestions
+            };
 
-<script>
-    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita o envio do formulário
+            // Verificando se já existem feedbacks salvos, e adicionando o novo feedback
+            var feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+            feedbacks.push(feedback);
 
-        // Obtendo os valores dos inputs
-        var opinion = document.getElementById("opinion").value;
-        var suggestions = document.getElementById("suggestions").value;
+            // Salvando os feedbacks no localStorage
+            localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
 
-        // Criação de um objeto para salvar os dados
-        var feedback = {
-            opinion: opinion,
-            suggestions: suggestions
-        };
+            // Redirecionando para a página principal
+            window.location.href = "feedbacks.html";
+        });
+    </script>
 
-        // Verificando se já existem feedbacks salvos, e adicionando o novo feedback
-        var feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
-        feedbacks.push(feedback);
+    <script src="../js/script.js"></script>
 
-        // Salvando os feedbacks no localStorage
-        localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+    <!-- Emoji Joinha no canto inferior esquerdo -->
+    <div id="joinha" class="joinha">👍</div>
 
-        // Redirecionando para a página principal
-        window.location.href = "feedbacks.html";
-    });
-</script>
+    <script>
+        // Função para adicionar o efeito de brilho ao clicar no joinha
+        function shineEffect() {
+            const joinha = document.getElementById('joinha');
+            joinha.classList.add('shine'); // Aplica a animação de brilho
 
-    <script src="script.js"></script>
-
-<!-- Emoji Joinha no canto inferior esquerdo -->
-<div id="joinha" class="joinha">👍</div>
-
-<script>
-    // Função para adicionar o efeito de brilho ao clicar no joinha
-    function shineEffect() {
-        const joinha = document.getElementById('joinha');
-        joinha.classList.add('shine'); // Aplica a animação de brilho
-
-        // Remove o efeito de brilho após a animação
-        setTimeout(() => {
-            joinha.classList.remove('shine');
-        }, 1500); // O brilho dura 1.5 segundos
-    }
-
-    // Adiciona o evento de clique no emoji joinha
-    document.getElementById('joinha').addEventListener('click', shineEffect);
-</script>
-
-<script>
-    // Função para adicionar o efeito de brilho ao clicar no joinha
-    function shineEffect() {
-        const joinha = document.getElementById('joinha');
-        joinha.classList.add('shine'); // Aplica a animação de brilho
-
-        // Remove o efeito de brilho após a animação
-        setTimeout(() => {
-            joinha.classList.remove('shine');
-        }, 1500); // O brilho dura 1.5 segundos
-    }
-
-    // Função para gerar partículas de "coração"
-    function createHeartParticles(event) {
-        const numParticles = 10;
-        const particlesContainer = document.body;
-        
-        for (let i = 0; i < numParticles; i++) {
-            const heart = document.createElement('span');
-            heart.classList.add('heart-particle');
-            heart.innerHTML = '❤️'; // Emoji de coração
-
-            // Posição aleatória do coração
-            const xPos = event.clientX + (Math.random() - 0.5) * 100;
-            const yPos = event.clientY + (Math.random() - 0.5) * 100;
-            heart.style.left = `${xPos}px`;
-            heart.style.top = `${yPos}px`;
-
-            particlesContainer.appendChild(heart);
-
-            // Remove a partícula depois que o efeito for concluído
+            // Remove o efeito de brilho após a animação
             setTimeout(() => {
-                heart.remove();
-            }, 1000); // Remove as partículas após 1 segundo
+                joinha.classList.remove('shine');
+            }, 1500); // O brilho dura 1.5 segundos
         }
-    }
 
-    // Adiciona o evento de clique no emoji joinha
-    document.getElementById('joinha').addEventListener('click', function(event) {
-        shineEffect(); // Aplica o efeito de brilho
-        createHeartParticles(event); // Cria partículas de coração
-    });
-</script>
+        // Adiciona o evento de clique no emoji joinha
+        document.getElementById('joinha').addEventListener('click', shineEffect);
+    </script>
+
+    <script>
+        // Função para adicionar o efeito de brilho ao clicar no joinha
+        function shineEffect() {
+            const joinha = document.getElementById('joinha');
+            joinha.classList.add('shine'); // Aplica a animação de brilho
+
+            // Remove o efeito de brilho após a animação
+            setTimeout(() => {
+                joinha.classList.remove('shine');
+            }, 1500); // O brilho dura 1.5 segundos
+        }
+
+        // Função para gerar partículas de "coração"
+        function createHeartParticles(event) {
+            const numParticles = 10;
+            const particlesContainer = document.body;
+
+            for (let i = 0; i < numParticles; i++) {
+                const heart = document.createElement('span');
+                heart.classList.add('heart-particle');
+                heart.innerHTML = '❤️'; // Emoji de coração
+
+                // Posição aleatória do coração
+                const xPos = event.clientX + (Math.random() - 0.5) * 100;
+                const yPos = event.clientY + (Math.random() - 0.5) * 100;
+                heart.style.left = `${xPos}px`;
+                heart.style.top = `${yPos}px`;
+
+                particlesContainer.appendChild(heart);
+
+                // Remove a partícula depois que o efeito for concluído
+                setTimeout(() => {
+                    heart.remove();
+                }, 1000); // Remove as partículas após 1 segundo
+            }
+        }
+
+        // Adiciona o evento de clique no emoji joinha
+        document.getElementById('joinha').addEventListener('click', function(event) {
+            shineEffect(); // Aplica o efeito de brilho
+            createHeartParticles(event); // Cria partículas de coração
+        });
+    </script>
 
 
-    
+
 
 </body>
+
 </html>
