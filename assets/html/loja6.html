@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formas de pagamento</title>
-    <link rel="shortcut icon" href="loja/logo.png">
-    <link rel="stylesheet" href="loja6.css">
+    <link rel="shortcut icon" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/loja6.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <style>
@@ -15,8 +15,8 @@
             background-color: #f4f7fc;
             margin: 0;
         }
-
         /* Estilo do sistema de saldo */
+        
         .saldo-container {
             display: flex;
             flex-direction: column;
@@ -31,20 +31,20 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
         .saldo-header {
             font-size: 24px;
             color: #333;
             margin-bottom: 20px;
         }
-
+        
         .saldo {
             font-size: 28px;
             font-weight: bold;
             color: #2ecc71;
             margin-bottom: 20px;
         }
-
+        
         .button {
             background-color: #3498db;
             color: white;
@@ -56,37 +56,38 @@
             display: inline-block;
             transition: background-color 0.3s;
         }
-
+        
         .button:hover {
             background-color: #2980b9;
         }
-
         /* Estilo da lista de transações */
+        
         .transacao {
             margin-top: 20px;
             width: 100%;
             border-collapse: collapse;
         }
-
-        .transacao th, .transacao td {
+        
+        .transacao th,
+        .transacao td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: center;
         }
-
+        
         .transacao th {
             background-color: #f2f2f2;
         }
-
+        
         .transacao td.deposito {
             color: green;
         }
-
+        
         .transacao td.saque {
             color: red;
         }
-
         /* Sidebar customizada */
+        
         .w3-sidebar {
             z-index: 3;
             width: 300px;
@@ -168,7 +169,7 @@
         <br>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
         <div class="w3-container">
-            <img src="loja/logo.png" alt="Logo" width="250px" height="200px">
+            <img src="../images/logo.png" alt="Logo" width="250px" height="200px">
         </div>
         <div class="w3-bar-block">
             <h1>FORMA DE PAGAMENTOS</h1>
@@ -181,7 +182,7 @@
     <!-- Conteúdo principal centralizado -->
     <div class="saldo-container">
         <div class="saldo-header">Sistema de Saldo Bancário</div>
-        <div class="saldo" id="saldo">R$ 1000.00</div>
+        <div class="saldo" id="saldo">R$0</div>
         <button onclick="depositar()" class="button">Depositar</button>
         <button onclick="sacar()" class="button">Sacar</button>
 
