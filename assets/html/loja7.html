@@ -1,153 +1,180 @@
 <!DOCTYPE html>
-<html lang="pt-BR" style="background-color:white">
-
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento com Cartão</title>
-    <!-- Incluindo o W3.CSS para estilos rápidos -->
-    <title>Formas de pagamento</title>
-    <link rel="shortcut icon" href="../images/logo.png">
+    <title>Capirelo Foods - Pagamento Cartão</title>
     <link rel="stylesheet" href="../css/loja7.css">
-    <link rel="stylesheet" href="../../index.html">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-</head>
-
-<body>
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="../images/Logo_SF.png">
     <style>
-        /* Estilos personalizados para a sidebar */
-        
-        .w3-sidebar {
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
             position: fixed;
-            top: 0;
             left: 0;
-            width: 300px;
-            height: 100%;
-            background-color: #d32f2f;
-            z-index: 3;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
         }
-        /* Estilos para o conteúdo principal */
-        
-        .container {
-            margin-left: 320px;
-            /* Ajusta o conteúdo para não ficar atrás da sidebar */
-            padding: 20px;
+        .sidebar-logo {
+            margin-bottom: 30px;
         }
-        
-        .payment-form {
-            max-width: 500px;
-            margin: auto;
-            background-color: #f4f4f4;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        .payment-form h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .input-group {
-            margin-bottom: 15px;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .input-group input {
+        .sidebar-links {
+            list-style: none;
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 0;
+            margin: 0 0 20px 0;
         }
-        
-        .submit-button button {
-            width: 100%;
-            background-color: #d32f2f;
+        .sidebar-links li {
+            margin: 18px 0;
+        }
+        .sidebar-links a {
             color: #fff;
-            padding: 12px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
             border: none;
-            border-radius: 5px;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
             cursor: pointer;
-            font-size: 18px;
+            display: flex;
+            align-items: center;
         }
-        
-        .submit-button button:hover {
-            background-color: #b71c1c;
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
         }
-        /* Responsividade para telas menores */
-        
-        @media (max-width: 768px) {
-            .w3-sidebar {
-                width: 100%;
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
                 height: auto;
-                position: relative;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
             }
-            .container {
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
                 margin-left: 0;
+                padding: 24px 8px;
             }
         }
     </style>
-    </head>
-
-    <body>
-
-        <!-- Sidebar/menu -->
-        <nav class="w3-sidebar w3-collapse w3-top w3-padding" id="mySidebar">
-            <br>
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
-            <div class="w3-container">
-                <img src="../images/logo.png" alt="Logo" style="width:100%; height:auto;">
-            </div>
-            <div class="w3-bar-block">
-                <h1>FORMA DE PAGAMENTOS</h1>
-                <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Cartão</a>
-            </div>
-        </nav>
-
-        <!-- Conteúdo principal -->
-        <div class="container">
-            <div class="payment-form">
-                <h1>Pagamento com Cartão</h1>
-                <form action="#" method="POST">
-                    <div class="input-group">
-                        <label for="card-number">Número do Cartão</label>
-                        <input type="text" id="card-number" placeholder="1234 5678 9876 5432" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="card-holder">Nome do Titular</label>
-                        <input type="text" id="card-holder" placeholder="Nome do Titular" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="expiration-date">Data de Validade</label>
-                        <input type="text" id="expiration-date" placeholder="MM/AA" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="cvv">CVV</label>
-                        <input type="password" id="cvv" placeholder="123" required>
-                    </div>
-                    <div class="submit-button">
-                        <button type="submit">Pagar Agora</button>
-                    </div>
-                </form>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
             </div>
         </div>
-
-        <!-- Script para fechar a sidebar no modo mobile -->
-        <script>
-            function w3_close() {
-                document.getElementById("mySidebar").style.display = "none";
-            }
-        </script>
-
-
-    </body>
-
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="pagamento-section">
+            <h1 class="titulo-pagina">Pagamento com Cartão</h1>
+            <form action="#" method="POST" class="form-pagamento">
+                <div class="form-group">
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9876 5432" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-holder">Nome do Titular</label>
+                    <input type="text" id="card-holder" name="card-holder" placeholder="Nome do Titular" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiration-date">Data de Validade</label>
+                    <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" name="cvv" placeholder="123" required>
+                </div>
+                <button type="submit" class="btn-pagamento">Pagar Agora</button>
+            </form>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
 </html>

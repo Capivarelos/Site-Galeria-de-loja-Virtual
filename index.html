@@ -10,21 +10,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/Logo_SF.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #fff9f6; }
+        .hero-title { font-size: 3.5rem; font-weight: bold; color: #d32f2f; }
+        .hero-subtitle { font-size: 1.5rem; color: #555; margin-bottom: 30px; }
+        .gallery-img { border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 16px; cursor: pointer; transition: transform 0.2s; }
+        .gallery-img:hover { transform: scale(1.04); }
+        .service-card { border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); background: #fff; padding: 32px 20px; margin-bottom: 24px; text-align: center; }
+        .service-icon { font-size: 2.5rem; color: #d32f2f; margin-bottom: 12px; }
+        .contact-form .w3-input { padding-left: 36px; }
+        .input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #d32f2f; }
+        .footer { background: #f44336; color: #fff; padding: 24px 0; text-align: center; border-radius: 16px 16px 0 0; margin-top: 60px; }
+        .dropdown-menu { background: #fff9f6; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-
     <!-- Sidebar/menu -->
     <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
         <div class="w3-container">
-            <img src="assets/images/Logo_SF.png" alt="" width="250px" height="">
+            <img src="assets/images/Logo_SF.png" alt="Logo Capirelo Foods" width="220px" style="border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
         </div>
         <div class="w3-bar-block">
             <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
@@ -38,9 +48,9 @@
               Informações Da Empresa
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="assets/html/SobreNos.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sobre Nós</a>
-                <a class="dropdown-item" href="assets/html/Contato.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contato</a>
-                <a class="dropdown-item" href="assets/html/parceiros.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Parceiros</a>
+                <a class="dropdown-item" href="assets/html/SobreNos.html" onclick="w3_close()">Sobre Nós</a>
+                <a class="dropdown-item" href="assets/html/Contato.html" onclick="w3_close()">Contato</a>
+                <a class="dropdown-item" href="assets/html/parceiros.html" onclick="w3_close()">Parceiros</a>
             </div>
         </div>
     </nav>
@@ -56,24 +66,23 @@
 
     <!-- !Conteudo da Pagina! -->
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
-
         <!-- Cabeçalho -->
         <div class="w3-container" style="margin-top:80px" id="showcase">
-            <h1 class="w3-jumbo"><b>Pagina Inicial</b></h1>
+            <h1 class="hero-title"><b>Capirelo Foods</b></h1>
+            <p class="hero-subtitle">Os melhores produtos e serviços para o seu negócio ou evento!</p>
         </div>
 
-        <!-- Grade de Fotos (modal) -->
-        <div class="w3-row-padding">
+        <!-- Grade de Fotos (galeria bonita) -->
+        <div class="w3-row-padding w3-margin-top">
             <div class="w3-half">
-                <img src="" style="width:40%" onclick="onClick(this)" alt="">
-                <img src="" style="width:50%" onclick="onClick(this)" alt="">
-                <img src="" style="width:50%" onclick="onClick(this)" alt="">
+                <img src="assets/images/Capirelo_food.png" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Prato especial Capirelo">
+                <img src="assets/images/granja_uniao_merlot_rose.webp" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Vinho Merlot Rosé">
+                <img src="assets/images/Logo_CF.jpg" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Logo Capirelo Foods">
             </div>
-
             <div class="w3-half">
-                <img src="" style="width:60%" onclick="onClick(this)" alt="">
-                <img src="" style="width:50%" onclick="onClick(this)" alt="">
-                <img src="" style="width:30%" onclick="onClick(this)" alt="">
+                <img src="assets/images/JackDaniel's.jpeg" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Jack Daniel's">
+                <img src="assets/images/parceiros.jpg" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Parceiros">
+                <img src="assets/images/Logo_SF.png" class="gallery-img" style="width:90%" onclick="onClick(this)" alt="Logo Secundária">
             </div>
         </div>
 
@@ -88,42 +97,79 @@
 
         <!-- Serviços -->
         <div class="w3-container" id="services" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red"><b>Serviços.</b></h1>
+            <h1 class="w3-xxxlarge w3-text-red"><b>Serviços</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
-            <p></p>
-            <p></p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-truck"></i></div>
+                        <h4>Entrega Rápida</h4>
+                        <p>Receba seus produtos com agilidade e segurança em todo o Brasil.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                        <h4>Produtos de Qualidade</h4>
+                        <p>Selecionamos os melhores fornecedores para garantir excelência.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-headset"></i></div>
+                        <h4>Suporte Personalizado</h4>
+                        <p>Atendimento dedicado para tirar dúvidas e resolver problemas.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Contato -->
         <div class="w3-container" id="contact" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red"><b>Contato.</b></h1>
+            <h1 class="w3-xxxlarge w3-text-red"><b>Contato</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
-            <p>Problemas com o pedido? Nos contate :D, vc sempre será Bem Vindo</p>
-            <form action="/action_page.php" target="_blank">
-                <div class="w3-section">
-                    <label>Nome</label>
-                    <input class="w3-input w3-border" type="text" name="Name" required>
+            <p>Problemas com o pedido? Nos contate :D, você sempre será bem-vindo!</p>
+            <form class="contact-form" action="/action_page.php" target="_blank">
+                <div class="w3-section position-relative">
+                    <span class="input-icon"><i class="fa fa-user"></i></span>
+                    <input class="w3-input w3-border" type="text" name="Name" required placeholder="Nome" style="padding-left:36px;">
                 </div>
-                <div class="w3-section">
-                    <label>Email</label>
-                    <input class="w3-input w3-border" type="text" name="Email" required>
+                <div class="w3-section position-relative">
+                    <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                    <input class="w3-input w3-border" type="email" name="Email" required placeholder="Email" style="padding-left:36px;">
                 </div>
-                <div class="w3-section">
-                    <label>Mensagem</label>
-                    <input class="w3-input w3-border" type="text" name="Message" required>
+                <div class="w3-section position-relative">
+                    <span class="input-icon"><i class="fa fa-comment"></i></span>
+                    <textarea class="w3-input w3-border" name="Message" required placeholder="Mensagem" rows="3" style="padding-left:36px;"></textarea>
                 </div>
                 <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Enviar mensagem</button>
             </form>
         </div>
-
-        <!-- Conteúdo da página final -->
     </div>
 
-    <!-- Contêiner W3.CSS -->
-    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
-        <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p>
+    <!-- Rodapé elegante -->
+    <div class="footer">
+        <p>Capirelo Foods &copy; 2024 &middot; Todos os direitos reservados<br>
+        <span style="font-size: 0.95em;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity" style="color:#fff;text-decoration:underline;">w3.css</a></span></p>
     </div>
 
+    <script>
+        // Modal de imagem
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("caption").innerHTML = element.alt;
+            document.getElementById("modal01").style.display = "block";
+        }
+        // Sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
     <script src="/assets/js/script.js"></script>
 </body>
 

@@ -1,105 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-BR" style="background-color:white">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formas de pagamento</title>
-    <link rel="shortcut icon" href="../images/logo.png">
+    <title>Capirelo Foods - Saldo Bancário</title>
     <link rel="stylesheet" href="../css/loja6.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="icon" href="../images/Logo_SF.png">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7fc;
-            margin: 0;
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
         }
-        /* Estilo do sistema de saldo */
-        
-        .saldo-container {
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
-            margin-top: 50px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            padding-top: 40px;
+            z-index: 1000;
         }
-        
-        .saldo-header {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
+        .sidebar-logo {
+            margin-bottom: 30px;
         }
-        
-        .saldo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #2ecc71;
-            margin-bottom: 20px;
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        .button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 10px;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-        
-        .button:hover {
-            background-color: #2980b9;
-        }
-        /* Estilo da lista de transações */
-        
-        .transacao {
-            margin-top: 20px;
+        .sidebar-links {
+            list-style: none;
             width: 100%;
-            border-collapse: collapse;
+            padding: 0;
+            margin: 0 0 20px 0;
         }
-        
-        .transacao th,
-        .transacao td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
+        .sidebar-links li {
+            margin: 18px 0;
         }
-        
-        .transacao th {
-            background-color: #f2f2f2;
+        .sidebar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
         }
-        
-        .transacao td.deposito {
-            color: green;
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
         }
-        
-        .transacao td.saque {
-            color: red;
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
         }
-        /* Sidebar customizada */
-        
-        .w3-sidebar {
-            z-index: 3;
-            width: 300px;
-            font-weight: bold;
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
+            }
         }
     </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
+            </div>
+        </div>
+    </aside>
     <script>
-        // Variáveis para saldo e histórico de transações
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="saldo-section">
+            <h1 class="titulo-pagina">Sistema de Saldo Bancário</h1>
+            <div class="saldo-container">
+                <div class="saldo-header">Saldo Atual</div>
+                <div class="saldo" id="saldo">R$0</div>
+                <button onclick="depositar()" class="button">Depositar</button>
+                <button onclick="sacar()" class="button">Sacar</button>
+                <h3>Histórico de Transações</h3>
+                <table class="transacao">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historico"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
         let saldo = 1000;
         let historico = [];
-
-        // Função para atualizar o saldo exibido na página
         function atualizarSaldo() {
             document.getElementById("saldo").textContent = "R$ " + saldo.toFixed(2);
             document.getElementById("historico").innerHTML = "";
@@ -118,35 +195,23 @@
                 document.getElementById("historico").appendChild(row);
             }
         }
-
-        // Função para realizar um depósito
         function depositar() {
             const valor = parseFloat(prompt("Digite o valor a depositar:"));
             if (!isNaN(valor) && valor > 0) {
                 saldo += valor;
-                historico.push({
-                    data: new Date().toLocaleString(),
-                    tipo: "Depósito",
-                    valor: valor
-                });
+                historico.push({ data: new Date().toLocaleString(), tipo: "Depósito", valor: valor });
                 atualizarSaldo();
                 alert("Depósito de R$ " + valor.toFixed(2) + " realizado com sucesso!");
             } else {
                 alert("Valor inválido! Tente novamente.");
             }
         }
-
-        // Função para realizar um saque
         function sacar() {
             const valor = parseFloat(prompt("Digite o valor a sacar:"));
             if (!isNaN(valor) && valor > 0) {
                 if (valor <= saldo) {
                     saldo -= valor;
-                    historico.push({
-                        data: new Date().toLocaleString(),
-                        tipo: "Saque",
-                        valor: valor
-                    });
+                    historico.push({ data: new Date().toLocaleString(), tipo: "Saque", valor: valor });
                     atualizarSaldo();
                     alert("Saque de R$ " + valor.toFixed(2) + " realizado com sucesso!");
                 } else {
@@ -156,50 +221,7 @@
                 alert("Valor inválido! Tente novamente.");
             }
         }
-
-        // Função para inicializar o sistema de saldo ao carregar a página
         window.onload = atualizarSaldo;
     </script>
-</head>
-
-<body>
-
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar">
-        <br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
-        <div class="w3-container">
-            <img src="../images/logo.png" alt="Logo" width="250px" height="200px">
-        </div>
-        <div class="w3-bar-block">
-            <h1>FORMA DE PAGAMENTOS</h1>
-            <a href="javascript:void(0)" onclick="depositar()" class="w3-bar-item w3-button w3-hover-white">Depositar</a>
-            <a href="javascript:void(0)" onclick="sacar()" class="w3-bar-item w3-button w3-hover-white">Sacar</a>
-            <a href="loja ancora2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Voltar</a>
-        </div>
-    </nav>
-
-    <!-- Conteúdo principal centralizado -->
-    <div class="saldo-container">
-        <div class="saldo-header">Sistema de Saldo Bancário</div>
-        <div class="saldo" id="saldo">R$0</div>
-        <button onclick="depositar()" class="button">Depositar</button>
-        <button onclick="sacar()" class="button">Sacar</button>
-
-        <!-- Histórico de transações -->
-        <h3>Histórico de Transações</h3>
-        <table class="transacao">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Tipo</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody id="historico"></tbody>
-        </table>
-    </div>
-
 </body>
-
 </html>

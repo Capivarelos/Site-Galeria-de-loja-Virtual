@@ -1,3 +1,26 @@
+/* 1. Fontes */
+@font-face {
+    font-family: 'PkChicken';
+    src: url(../fonts/PinkChicken-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Reset e base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5 {
+    font-family: 'PkChicken', 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/* 3. Estilos específicos */
 /* Gradiente de fundo para a página */
 html {
   font-family: 'Poppins', sans-serif;

@@ -1,133 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Capirelo Foods - Produtos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../images/Logo_SF.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
     <link rel="stylesheet" href="../css/produtos.css">
     <link rel="icon" href="../images/Logo_SF.png">
-    <title>Capirelo Foods - Produtos</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-    <script type="text/javascript">
-        window.tailwind.config = {
-            darkMode: ['class'],
-            theme: {
-                extend: {
-                    colors: {
-                        border: 'hsl(var(--border))',
-                        input: 'hsl(var(--input))',
-                        ring: 'hsl(var(--ring))',
-                        background: 'hsl(var(--background))',
-                        foreground: 'hsl(var(--foreground))',
-                        primary: {
-                            DEFAULT: 'hsl(var(--primary))',
-                            foreground: 'hsl(var(--primary-foreground))'
-                        },
-                        secondary: {
-                            DEFAULT: 'hsl(var(--secondary))',
-                            foreground: 'hsl(var(--secondary-foreground))'
-                        },
-                        destructive: {
-                            DEFAULT: 'hsl(var(--destructive))',
-                            foreground: 'hsl(var(--destructive-foreground))'
-                        },
-                        muted: {
-                            DEFAULT: 'hsl(var(--muted))',
-                            foreground: 'hsl(var(--muted-foreground))'
-                        },
-                        accent: {
-                            DEFAULT: 'hsl(var(--accent))',
-                            foreground: 'hsl(var(--accent-foreground))'
-                        },
-                        popover: {
-                            DEFAULT: 'hsl(var(--popover))',
-                            foreground: 'hsl(var(--popover-foreground))'
-                        },
-                        card: {
-                            DEFAULT: 'hsl(var(--card))',
-                            foreground: 'hsl(var(--card-foreground))'
-                        },
-                    },
-                }
+    <style>
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        .sidebar-logo {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .sidebar-links {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar-links li {
+            margin: 18px 0;
+        }
+        .sidebar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
             }
         }
-    </script>
+    </style>
 </head>
-
 <body>
-    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
-        <div class="w3-container">
-            <img src="../images/Logo_SF.png" alt="" width="250px" height="">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
         </div>
-        <div class="w3-bar-block">
-            <a href="../../index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-            <a href="Produtos.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Produtos</a>
-            <a href="3services.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Serviços</a>
-            <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
-            <a href="registrar.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Registrar</a>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="fals
-            style=" background-color: #f44336; border: 0px;>
-              Informações Da Empresa
-            </button>
-            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
-                <a class="dropdown-item " href="SobreNos.html" onclick="w3_close() " class="w3-bar-item w3-button w3-hover-white ">Sobre Nós</a>
-                <a class="dropdown-item " href="Contato.html" onclick="w3_close() " class="w3-bar-item w3-button w3-hover-white ">Contato</a>
-                <a class="dropdown-item " href="parceiros.html" onclick="w3_close() " class="w3-bar-item w3-button w3-hover-white ">Parceiros</a>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html" class="active">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
             </div>
         </div>
-    </nav>
-    <div class="bg-background p-4 " style="margin-left: 300px; ">
-        <header class="flex justify-between items-center mb-4 ">
-            <h1 class="text-2xl font-bold ">Bebidas</h1>
-            <div>
-                <input type="texto " placeholder="Pesquise em toda a loja " class="p-2 border border-border rounded " />
-                <button class="bg-primary text-primary-foreground p-2 rounded ">Pesquisar</button>
-            </div>
-        </header>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-            <div class="border border-border rounded p-4 ">
-                <img src="../images/WhatsApp Image 2024-10-09 at 14.51.38.jpeg" alt="Jack Daniels " class="mb-2 " />
-                <div class="detalhes ">
-                    <div class="info_geral ">
-                        <h2 class="font-bold ">Jack Daniels</h2>
-                        <p class="text-muted-foreground ">R$ 199,99</p>
-                        <a href="loja ancora2.html"><button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded ">Adicionar</button></a>
-                    </div>
-                    <div class="details ">
-                        <a href="Detalhes do produto1.html"><button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded ">Detalhes do produto</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 " style="width: 1000px;">
-                <div class="border border-border rounded p-4 ">
-                    <img src="../images/granja_uniao_merlot_rose.webp" alt="Marlote Rose" class="mb-2 " />
-                    <div class="detalhes ">
-                        <div class="info_geral ">
-                            <h2 class="font-bold ">Marlote Rose</h2>
-                            <p class="text-muted-foreground ">R$ 27,80</p>
-                            <a href="loja ancora2.html"><button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded ">Adicionar</button></a>
-                        </div>
-                        <div class="details ">
-                            <a href="Detalhes do produto2.html"><button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded ">Detalhes do produto</button></a>
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="produtos-section">
+            <h1 class="titulo-pagina">Nossos Produtos</h1>
+            <div class="produtos-grid">
+                <!-- Produto 1 -->
+                <div class="produto-card">
+                    <img src="../images/WhatsApp Image 2024-10-09 at 14.51.38.jpeg" alt="Jack Daniels" class="produto-img" />
+                    <div class="produto-info">
+                        <h2>Jack Daniels</h2>
+                        <p class="produto-preco">R$ 199,99</p>
+                        <div class="produto-acoes">
+                            <a href="loja ancora2.html" class="btn-adicionar">Adicionar</a>
+                            <a href="Detalhes do produto1.html" class="btn-detalhes">Detalhes do produto</a>
                         </div>
                     </div>
                 </div>
+                <!-- Produto 2 -->
+                <div class="produto-card">
+                    <img src="../images/granja_uniao_merlot_rose.webp" alt="Merlot Rosé" class="produto-img" />
+                    <div class="produto-info">
+                        <h2>Merlot Rosé</h2>
+                        <p class="produto-preco">R$ 27,80</p>
+                        <div class="produto-acoes">
+                            <a href="loja ancora2.html" class="btn-adicionar">Adicionar</a>
+                            <a href="Detalhes do produto2.html" class="btn-detalhes">Detalhes do produto</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais produtos aqui seguindo o padrão acima -->
             </div>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+            <p>Inspirado por <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </div>
+    </footer>
 </body>
-
 </html>

@@ -1,204 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="loja/logo.png">
-    <title>Página de Feedback</title>
+    <title>Capirelo Foods - Feedback</title>
     <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="icon" href="../images/Logo_SF.png">
+    <style>
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        .sidebar-logo {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .sidebar-links {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar-links li {
+            margin: 18px 0;
+        }
+        .sidebar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <!-- Logo na parte superior -->
-    <header>
-        <img src="../images/logo.png" alt="Logo do Site" class="logo">
-    </header>
-    <div class="feedback-container">
-        <h1>Obrigado pelo seu Feedback!</h1>
-        <p>Queremos sempre melhorar, suas opiniões são importantes para nós.</p>
-
-        <div class="feedback-container">
-            <h1>Feedback</h1>
-            <form id="feedback-form">
-                <!-- Pergunta 1 -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
+            </div>
+        </div>
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="feedback-section">
+            <h1 class="titulo-pagina">Feedback</h1>
+            <p>Queremos sempre melhorar, suas opiniões são importantes para nós.</p>
+            <form id="feedback-form" class="form-feedback">
                 <div class="question">
                     <label for="satisfacao">Como você avalia sua experiência no site?</label>
                     <select id="satisfacao" name="satisfacao" required>
-                    <option value="excelente">Excelente</option>
-                    <option value="bom">Bom</option>
-                    <option value="regular">Regular</option>
-                    <option value="ruim">Ruim</option>
-                    <option value="ruim">Péssimo</option>
-                </select>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="ruim">Ruim</option>
+                        <option value="pessimo">Péssimo</option>
+                    </select>
                 </div>
-
-                <!-- Pergunta 2 -->
                 <div class="question">
                     <label for="facilidade">Como você avalia a facilidade de navegação?</label>
                     <select id="facilidade" name="facilidade" required>
-                    <option value="excelente">Excelente</option>
-                    <option value="bom">Bom</option>
-                    <option value="regular">Regular</option>
-                    <option value="ruim">Ruim</option>
-                    <option value="ruim">Péssimo</option>
-                </select>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="ruim">Ruim</option>
+                        <option value="pessimo">Péssimo</option>
+                    </select>
                 </div>
-
-                <!-- Pergunta 3 -->
                 <div class="question">
                     <label for="design">Como você avalia o design do site?</label>
                     <select id="design" name="design" required>
-                    <option value="excelente">Excelente</option>
-                    <option value="bom">Bom</option>
-                    <option value="regular">Regular</option>
-                    <option value="ruim">Ruim</option>
-                    <option value="ruim">Péssimo</option>
-                </select>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="ruim">Ruim</option>
+                        <option value="pessimo">Péssimo</option>
+                    </select>
                 </div>
-
-                <!-- Pergunta 4 -->
                 <div class="question">
                     <label for="carregamento">Como você avalia o tempo de carregamento das páginas?</label>
                     <select id="carregamento" name="carregamento" required>
-                    <option value="excelente">Excelente</option>
-                    <option value="bom">Bom</option>
-                    <option value="regular">Regular</option>
-                    <option value="ruim">Ruim</option>
-                    <option value="ruim">Péssimo</option>
-                </select>
+                        <option value="excelente">Excelente</option>
+                        <option value="bom">Bom</option>
+                        <option value="regular">Regular</option>
+                        <option value="ruim">Ruim</option>
+                        <option value="pessimo">Péssimo</option>
+                    </select>
                 </div>
-
-                <!-- Pergunta 5 -->
                 <div class="question">
                     <label for="funcionalidade">O site possui todas as funcionalidades que você esperava?</label>
                     <select id="funcionalidade" name="funcionalidade" required>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                    <option value="parcial">Parcialmente</option>
-                </select>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                        <option value="parcial">Parcialmente</option>
+                    </select>
                 </div>
-
-                <!-- Pergunta 6 -->
                 <div class="question">
                     <label for="sugestoes">Tem alguma sugestão para melhorar o site?</label>
                     <textarea id="sugestoes" name="sugestoes" rows="4"></textarea>
                 </div>
-
-                <!-- Pergunta 7 -->
                 <div class="question">
                     <label for="comentarios">Deixe um comentário adicional:</label>
                     <textarea id="comentarios" name="comentarios" rows="4"></textarea>
                 </div>
-
-                <!-- Enviar Feedback -->
-                <button type="submit">Enviar Feedback</button>
+                <button type="submit" class="btn-feedback">Enviar Feedback</button>
             </form>
+            <div class="back-to-site">
+                <a href="loja ancora2.html" class="btn">Voltar ao Site</a>
+            </div>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
         </div>
-
-
-
-        <!-- Botão de voltar ao site principal -->
-        <div class="back-to-site">
-            <a href="loja ancora2.html" class="btn">Voltar ao Site</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita o envio do formulário
-
-            // Obtendo os valores dos inputs
-            var opinion = document.getElementById("opinion").value;
-            var suggestions = document.getElementById("suggestions").value;
-
-            // Criação de um objeto para salvar os dados
-            var feedback = {
-                opinion: opinion,
-                suggestions: suggestions
-            };
-
-            // Verificando se já existem feedbacks salvos, e adicionando o novo feedback
-            var feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
-            feedbacks.push(feedback);
-
-            // Salvando os feedbacks no localStorage
-            localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-
-            // Redirecionando para a página principal
-            window.location.href = "feedbacks.html";
-        });
-    </script>
-
+    </footer>
     <script src="../js/script.js"></script>
-
-    <!-- Emoji Joinha no canto inferior esquerdo -->
-    <div id="joinha" class="joinha">👍</div>
-
-    <script>
-        // Função para adicionar o efeito de brilho ao clicar no joinha
-        function shineEffect() {
-            const joinha = document.getElementById('joinha');
-            joinha.classList.add('shine'); // Aplica a animação de brilho
-
-            // Remove o efeito de brilho após a animação
-            setTimeout(() => {
-                joinha.classList.remove('shine');
-            }, 1500); // O brilho dura 1.5 segundos
-        }
-
-        // Adiciona o evento de clique no emoji joinha
-        document.getElementById('joinha').addEventListener('click', shineEffect);
-    </script>
-
-    <script>
-        // Função para adicionar o efeito de brilho ao clicar no joinha
-        function shineEffect() {
-            const joinha = document.getElementById('joinha');
-            joinha.classList.add('shine'); // Aplica a animação de brilho
-
-            // Remove o efeito de brilho após a animação
-            setTimeout(() => {
-                joinha.classList.remove('shine');
-            }, 1500); // O brilho dura 1.5 segundos
-        }
-
-        // Função para gerar partículas de "coração"
-        function createHeartParticles(event) {
-            const numParticles = 10;
-            const particlesContainer = document.body;
-
-            for (let i = 0; i < numParticles; i++) {
-                const heart = document.createElement('span');
-                heart.classList.add('heart-particle');
-                heart.innerHTML = '❤️'; // Emoji de coração
-
-                // Posição aleatória do coração
-                const xPos = event.clientX + (Math.random() - 0.5) * 100;
-                const yPos = event.clientY + (Math.random() - 0.5) * 100;
-                heart.style.left = `${xPos}px`;
-                heart.style.top = `${yPos}px`;
-
-                particlesContainer.appendChild(heart);
-
-                // Remove a partícula depois que o efeito for concluído
-                setTimeout(() => {
-                    heart.remove();
-                }, 1000); // Remove as partículas após 1 segundo
-            }
-        }
-
-        // Adiciona o evento de clique no emoji joinha
-        document.getElementById('joinha').addEventListener('click', function(event) {
-            shineEffect(); // Aplica o efeito de brilho
-            createHeartParticles(event); // Cria partículas de coração
-        });
-    </script>
-
-
-
-
 </body>
-
 </html>

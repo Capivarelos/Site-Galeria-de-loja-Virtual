@@ -1,87 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <title>Capirelo Foods - Serviços</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capirelo Foods - Serviços</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="../css/3service.css">
     <link rel="icon" href="../images/Logo_SF.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <style>
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        .sidebar-logo {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .sidebar-links {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar-links li {
+            margin: 18px 0;
+        }
+        .sidebar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-        <div class="w3-container">
-            <img src="../images/Logo_SF.png" alt="" width="250px" height="">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
         </div>
-        <div class="w3-bar-block">
-            <a href="../../index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
-            <a href="Produtos.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Produtos</a>
-            <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Serviços</a>
-            <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
-            <a href="registrar.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Registrar</a>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f44336; border: 0px;">
-              Informações Da Empresa
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="SobreNos.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Sobre Nós</a>
-                <a class="dropdown-item" href="Contato.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contato</a>
-                <a class="dropdown-item" href="parceiros.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Parceiros</a>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html" class="active">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Menu superior em telas pequenas -->
-    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-        <span>Capirelo Foods</span>
-    </header>
-
-    <!-- Efeito de sobreposição ao abrir a barra lateral em telas pequenas -->
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-    <!-- !Conteudo da Pagina! -->
-    <div class="w3-main" style="margin-left:340px;margin-right:40px">
-
-        <!-- Cabeçalho -->
-        <div class="w3-container" style="margin-top:80px" id="showcase">
-            <h1 class="w3-jumbo"><b>Design de Interiores</b></h1>
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="servicos-section">
+            <h1 class="titulo-pagina">Nossos Serviços</h1>
+            <div class="servicos-descricao">
+                <h2>Design de Interiores</h2>
+                <p>Somos um serviço de design de interiores que foca no que é melhor para a sua casa e no que é melhor para você!</p>
+                <p>Algum texto sobre nossos serviços – o que fazemos e o que oferecemos. Temos muito sucesso na área de coaching, mas desta vez nos deparamos com muito trabalho e dor. Pois deixe-me entrar nos mínimos detalhes, quem não exerce nenhum tipo de trabalho exceto que algumas delas podem ser úteis. Não fique zangado com a dor na repreensão, no prazer que ele quer ser um fio de cabelo da dor, deixe-o fugir da dor. A menos que estejam cegos pela luxúria, eles não se manifestam; são culpados aqueles que abandonam seus deveres e amolecem seus corações; isto é, os trabalhos do estudante serão seguidos, mas ocorrerão em um momento com grande trabalho e dor. Pois, falando nos mínimos detalhes, ninguém deve praticar qualquer tipo de trabalho, a menos que dele obtenha algum benefício.</p>
+            </div>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+            <p>Inspirado por <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
         </div>
-        <!-- Serviços -->
-        <div class="w3-container" id="services" style="margin-top:75px">
-            <h1 class="w3-xxxlarge w3-text-red"><b>Serviços.</b></h1>
-            <hr style="width:50px;border:5px solid red" class="w3-round">
-            <p>Somos um serviço de design de interiores que foca no que é melhor para a sua casa e no que é melhor para você!</p>
-            <p>Algum texto sobre nossos serviços – o que fazemos e o que oferecemos. Temos muito sucesso na área de coaching, mas desta vez nos deparamos com muito trabalho e dor. Pois deixe-me entrar nos mínimos detalhes, quem não exerce nenhum tipo de
-                trabalho exceto que algumas delas podem ser úteis. Não fique zangado com a dor na repreensão, no prazer que ele quer ser um fio de cabelo da dor, deixe-o fugir da dor. A menos que estejam cegos pela luxúria, eles não se manifestam; são
-                culpados aqueles que abandonam seus deveres e amolecem seus corações; isto é, os trabalhos do estudante serão seguidos, mas ocorrerão em um momento com grande trabalho e dor. Pois, falando nos mínimos detalhes, ninguém deve praticar qualquer
-                tipo de trabalho, a menos que dele obtenha algum benefício.
-            </p>
-        </div>
-
-        <!-- Conteúdo da página final -->
-    </div>
-
-    <!-- Contêiner W3.CSS -->
-    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
-        <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p>
-    </div>
-
-    <script src="3service.js"></script>
+    </footer>
+    <script src="../js/3service.js"></script>
 </body>
-
 </html>

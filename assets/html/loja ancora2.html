@@ -1,177 +1,197 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Compra</title>
+    <title>Capirelo Foods - Finalizar Compra</title>
     <link rel="stylesheet" href="../css/loja-ancora.CSS">
-    <!-- meu CSS original -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <a href="../../index.html" class="top-bar-link">Home</a>
-            <a href="Contato.html" class="top-bar-link">Suporte</a>
-            <a href="feedback.html" class="top-bar-link">Feedback</a>
-        </div>
-        <div class="top-bar-right">
-            <a href="login.html" class="top-bar-link">Entrar</a>
-            <a href="registrar.html" class="top-bar-link">Registrar</a>
-        </div>
-    </div>
-
-
+    <link rel="icon" href="../images/Logo_SF.png">
     <style>
-        /* Estilo do Modal */
-        
-        .modal {
-            display: none;
-            /* Inicialmente escondido */
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
             position: fixed;
-            z-index: 1;
             left: 0;
             top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        .sidebar-logo {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .sidebar-links {
+            list-style: none;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Cor de fundo transparente */
+            padding: 0;
+            margin: 0 0 20px 0;
         }
-        
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 40%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        .sidebar-links li {
+            margin: 18px 0;
         }
-        
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: black;
+        .sidebar-links a {
+            color: #fff;
             text-decoration: none;
-            cursor: pointer;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
         }
-        
-        .payment-option {
-            padding: 10px;
-            text-align: center;
-            background-color: #f1f1f1;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
         }
-        
-        .payment-option:hover {
-            background-color: #ddd;
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
+            }
         }
     </style>
 </head>
-
 <body>
-
-    <!-- Sidebar/Menu -->
-    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-        <div class="w3-container">
-            <img id="logo" src="../images/logo.png" alt="" width="250px" height="200px">
-
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
         </div>
-        <div class="w3-bar-block">
-            <h1 style="text-align: left;">FORMA DE PAGAMENTOS</h1>
-            <a href="loja3.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Entrega</a>
-
-
-            <a href="loja6.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Saldo da conta</a>
-
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
+            </div>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="w3-main" style="margin-left:340px;margin-right:40px; padding-top: 60px;">
-
-        <!-- Caixa do item -->
-        <div class="caixa-item">
-            <h3>Item Selecionado:</h3>
-            <div class="item-box">
-                <img src="../images/granja_uniao_merlot_rose.webp" alt="Imagem do Item">
-                <div>
-                    <h3 id="item-nome"></h3>
-                    <p>Preço: R$ <span id="item-preco"></span></p>
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="finalizar-compra-section">
+            <h1 class="titulo-pagina">Finalizar Compra</h1>
+            <div class="caixa-item">
+                <h3>Item Selecionado:</h3>
+                <div class="item-box">
+                    <img id="item-imagem" src="../images/granja_uniao_merlot_rose.webp" alt="Imagem do Item">
+                    <div>
+                        <h3 id="item-nome"></h3>
+                        <p>Preço: R$ <span id="item-preco"></span></p>
+                    </div>
+                </div>
+                <button onclick="abrirModal()">Finalizar Compra</button>
+            </div>
+            <!-- Modal de Pagamento -->
+            <div id="modalPagamento" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="fecharModal()">&times;</span>
+                    <h2>Escolha a forma de pagamento</h2>
+                    <div class="payment-option" onclick="window.location.href='loja4.html'">Pix</div>
+                    <div class="payment-option" onclick="window.location.href='loja5.html'">Boleto</div>
+                    <div class="payment-option" onclick="window.location.href='loja7.html'">Cartão de Crédito</div>
+                    <div class="payment-option" onclick="window.location.href='loja6.html'">Saldo</div>
                 </div>
             </div>
-            <button onclick="abrirModal()">Finalizar Compra</button>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
         </div>
-
-        <!-- Modal de Pagamento -->
-        <div id="modalPagamento" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModal()">&times;</span>
-                <h2>Escolha a forma de pagamento</h2>
-                <div class="payment-option" onclick="window.location.href='loja4.html'">Pix</div>
-                <div class="payment-option" onclick="window.location.href='loja5.html'">Boleto</div>
-                <div class="payment-option" onclick="window.location.href='loja7.html'">Cartão de Crédito</div>
-                <div class="payment-option" onclick="window.location.href='loja6.html'">Saldo</div>
-            </div>
-        </div>
-
-    </div>
-
+    </footer>
     <script>
-        // Abrir o modal
         function abrirModal() {
             document.getElementById("modalPagamento").style.display = "block";
         }
-
-        // Fechar o modal
         function fecharModal() {
             document.getElementById("modalPagamento").style.display = "none";
         }
-
-        // Recuperando os dados do localStorage
         const nome = localStorage.getItem('produtoNome');
         const imagem = localStorage.getItem('produtoImagem');
         const preco = localStorage.getItem('produtoPreco');
-
-        // Exibindo as informações na página
         document.getElementById('item-nome').innerText = nome;
         document.getElementById('item-imagem').src = imagem;
         document.getElementById('item-preco').innerText = preco;
     </script>
-
-
-    <button id="toggleTheme">Alternar Tema</button>
-
-    <script>
-        // Seleciona o botão de alternar tema
-        const themeToggleButton = document.querySelector('#toggleTheme');
-
-        // Checa se já existe um tema salvo no localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-
-        // Alterna entre tema claro e escuro
-        themeToggleButton.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? '' : 'dark';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-
-            // Salva o tema no localStorage
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
 </body>
-
 </html>

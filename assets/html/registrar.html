@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +7,64 @@
     <link rel="stylesheet" href="../css/registrar.css">
     <link rel="icon" href="../images/Logo_SF.png">
 </head>
-
 <body>
-    <main>
-        <section class="foto">
-            <img src="../images/Logo_SF.png" alt="">
-        </section>
-
-        <section class="partelogin">
-            <a href="../../index.html" style="padding-bottom: 50px;"><img src="../images/Capirelo_food.png" alt=""></a>
-
-            <form action="">
-                <label for="">Nome Completo</label>
-                <input type="text">
-                <label for="">E-mail</label>
-                <input type="text">
-                <label for="">Senha</label>
-                <input type="text">
-                <label for="">Confirmar Senha</label>
-                <input type="text" style="margin-bottom: 25px;">
-
-                <input type="submit" style="margin-bottom: 20px; width: 15%; height: 25px;">
-
+    <!-- Header/Navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="../../index.html"><img src="../images/Logo_SF.png" alt="Capirelo Foods Logo" height="60"></a>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="Produtos.html">Produtos</a></li>
+                <li><a href="3services.html">Serviços</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registrar.html" class="active">Registrar</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Informações</a>
+                    <div class="dropdown-content">
+                        <a href="SobreNos.html">Sobre Nós</a>
+                        <a href="Contato.html">Contato</a>
+                        <a href="parceiros.html">Parceiros</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <section class="registro-section">
+            <h1 class="titulo-pagina">Criar Conta</h1>
+            <form action="#" method="POST" class="form-registro">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                </div>
+                <button type="submit" class="btn-registrar">Registrar</button>
                 <div class="fzrLogin">
-                    <p>Já possui uma senha?</p>
+                    <p>Já possui uma conta?</p>
                     <a href="login.html">Fazer Login</a>
                 </div>
             </form>
         </section>
     </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
-
 </html>

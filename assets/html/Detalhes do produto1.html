@@ -1,60 +1,191 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capirelo Foods - Detalhes do Produto</title>
     <link rel="stylesheet" href="../css/Detalhes do produto1.css">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-    <script type="text/javascript">
-    </script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="icon" href="../images/Logo_SF.png">
+    <style>
+        body {
+            background: #f44336;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            background: #f44336;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            z-index: 1000;
+        }
+        .sidebar-logo {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo img {
+            width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .sidebar-links {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar-links li {
+            margin: 18px 0;
+        }
+        .sidebar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 500;
+            padding-left: 32px;
+            display: block;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-links a.active, .sidebar-links a:hover {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .sidebar-dropdown {
+            width: 100%;
+            position: relative;
+        }
+        .sidebar-dropdown-btn {
+            color: #fff;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+            font-weight: 400;
+            padding: 0 0 0 32px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-dropdown-btn:after {
+            content: '\25BC';
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
+        .sidebar-dropdown-content {
+            display: none;
+            flex-direction: column;
+            background: #f44336;
+            margin-left: 20px;
+        }
+        .sidebar-dropdown.open .sidebar-dropdown-content {
+            display: flex;
+        }
+        .sidebar-dropdown-content a {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 6px 0 6px 16px;
+            text-decoration: none;
+            font-family: 'Poppins', 'PkChicken', sans-serif;
+        }
+        .main-content {
+            margin-left: 320px;
+            padding: 40px 24px 24px 24px;
+        }
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100vw;
+                height: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 10px 0;
+            }
+            .sidebar-logo {
+                margin-bottom: 0;
+                margin-right: 16px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 24px 8px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <body class="bg-background text-primary-foreground">
-        <div class="max-w-lg mx-auto bg-card dark:bg-card-foreground dark:text-card p-6 rounded-lg shadow-lg">
-            <div class="flex flex-col md:flex-row items-center">
-                <img src="../images/JackDaniel's.jpeg" alt="Jack Daniels" class="w-32 h-auto md:mr-4 md:mb-0" />
-                <div class="md:w-3/4">
-                    <h2 class="text-xl font-bold">Whisk Jack Daniels </h2>
-                    <p class="text-muted-foreground">Marca: Jack Daniel's</p>
-                    <p class="text-lg font-semibold">R$ 199,90</p>
-                    <p class="line-through text-muted-foreground">R$ 293.9</p>
-                    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-sm">-32%</span>
-                </div>
-            </div>
-            <div class="mt-4">
-                <p><strong>Validade:</strong> Indeterminada/p>
-                    <p><strong>Teor Alcoólico:</strong> 40% ABV</p>
-                    <p><strong>Estilo:</strong> Tennessee Whiskey</p>
-                    <p><strong>Origem:</strong> Estados Unidos</p>
-                    <p><strong>Temperatura Ideal:</strong> 0-4°C</p>
-            </div>
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold">INFORMAÇÕES</h3>
-                <p><strong>Harmonização:</strong> O Jack Daniel's combina perfeitamente com carnes grelhadas, queijos envelhecidos e sobremesas à base de chocolate ou café.\n Também é uma ótima escolha para acompanhar charutos,\n destacando as nuances defumadas
-                    e adocicadas do whisky.</p>
-                <p><strong>Sensoriais:</strong></p>
-                <ul class="list-disc ml-5">
-                    <li>Corpo: Encorpado</li>
-                    <li>Aroma: Caramelo, baunilha e carvalho tostado</li>
-                    <li>Cor: Âmbar profundor</li>
-                </ul>
-            </div>
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold">COPO IDEAL</h3>
-                <p>Copo Old Fashioned: Este copo, de base larga e borda curta, é ideal para saborear o Jack Daniel's, permitindo espaço para gelo e facilitando a mistura em coquetéis clássicos.</p>
-            </div>
-            <div class="mt-6 flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0 md:mr-4">
-                    <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg">Comprar</button>
-                    <span class="text-muted-foreground block mt-2"> R$ 199,90</span>
-                </div>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../images/Logo_SF.png" alt="Capirelo Foods Logo">
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="Produtos.html">Produtos</a></li>
+            <li><a href="3services.html">Serviços</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <button class="sidebar-dropdown-btn" onclick="toggleDropdown()">Informações Da Empresa</button>
+            <div class="sidebar-dropdown-content" id="dropdownContent">
+                <a href="SobreNos.html">Sobre Nós</a>
+                <a href="Contato.html">Contato</a>
+                <a href="parceiros.html">Parceiros</a>
             </div>
         </div>
-    </body>
+    </aside>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById('sidebarDropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    <main class="main-content">
+        <section class="produto-detalhe-section">
+            <div class="produto-detalhe-card">
+                <div class="produto-detalhe-img">
+                    <img src="../images/JackDaniel's.jpeg" alt="Jack Daniels" class="w-32 h-auto" />
+                </div>
+                <div class="produto-detalhe-info">
+                    <h2>Whisk Jack Daniels</h2>
+                    <p class="text-muted-foreground">Marca: Jack Daniel's</p>
+                    <p class="produto-preco">R$ 199,90 <span class="produto-preco-antigo">R$ 293,90</span> <span class="desconto">-32%</span></p>
+                    <ul class="produto-caracteristicas">
+                        <li><strong>Validade:</strong> Indeterminada</li>
+                        <li><strong>Teor Alcoólico:</strong> 40% ABV</li>
+                        <li><strong>Estilo:</strong> Tennessee Whiskey</li>
+                        <li><strong>Origem:</strong> Estados Unidos</li>
+                        <li><strong>Temperatura Ideal:</strong> 0-4°C</li>
+                    </ul>
+                    <h3>INFORMAÇÕES</h3>
+                    <p><strong>Harmonização:</strong> O Jack Daniel's combina perfeitamente com carnes grelhadas, queijos envelhecidos e sobremesas à base de chocolate ou café. Também é uma ótima escolha para acompanhar charutos, destacando as nuances defumadas e adocicadas do whisky.</p>
+                    <p><strong>Sensoriais:</strong></p>
+                    <ul>
+                        <li>Corpo: Encorpado</li>
+                        <li>Aroma: Caramelo, baunilha e carvalho tostado</li>
+                        <li>Cor: Âmbar profundo</li>
+                    </ul>
+                    <h3>COPO IDEAL</h3>
+                    <p>Copo Old Fashioned: Este copo, de base larga e borda curta, é ideal para saborear o Jack Daniel's, permitindo espaço para gelo e facilitando a mistura em coquetéis clássicos.</p>
+                    <div class="produto-detalhe-acoes">
+                        <button class="btn-adicionar">Comprar</button>
+                        <span class="produto-preco">R$ 199,90</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Capirelo Foods. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
-
 </html>

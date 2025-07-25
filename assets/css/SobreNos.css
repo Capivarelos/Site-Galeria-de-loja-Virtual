@@ -1,22 +1,26 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: "Poppins", sans-serif
-}
-
+/* 1. Fontes */
 @font-face {
     font-family: 'PkChicken';
     src: url(../fonts/PinkChicken-Regular.ttf) format('truetype');
     font-weight: normal;
-    font-style: normal;}
+    font-style: normal;
+}
 
-body {
+/* 2. Reset e base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5 {
+    font-family: 'PkChicken', 'Poppins', sans-serif;
     font-size: 16px;
-    font-family: 'PkChicken';}
+}
 
+/* 3. Estilos específicos */
 .w3-half img {
     margin-bottom: -6px;
     margin-top: 16px;
@@ -26,16 +30,6 @@ body {
 
 .w3-half img:hover {
     opacity: 1
-}
-
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
 }
 
 .column {
